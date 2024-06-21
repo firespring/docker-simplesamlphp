@@ -1,6 +1,7 @@
-version: '3.7'
+---
 services:
   idp:
+    image: 300448126090.dkr.ecr.us-east-1.amazonaws.com/firespring/docker-simplesamlphp:${DST_TAG:-latest}
     build:
       context: .
       args:
@@ -9,7 +10,5 @@ services:
       SIMPLESAMLPHP_SP_ENTITY_ID: http://app.example.com
       SIMPLESAMLPHP_SP_ASSERTION_CONSUMER_SERVICE: http://localhost/simplesaml/module.php/saml/sp/saml2-acs.php/test-sp
       SIMPLESAMLPHP_SP_SINGLE_LOGOUT_SERVICE: http://localhost/simplesaml/module.php/saml/sp/saml2-logout.php/test-sp
-      SIMPLESAMLPHP_IDP_ADMIN_PASSWORD:
-      SIMPLESAMLPHP_IDP_SECRET_SALT:
-    ports:
-      - "8080:8080"
+      SIMPLESAMLPHP_IDP_ADMIN_PASSWORD: password123
+      SIMPLESAMLPHP_IDP_SECRET_SALT: salt

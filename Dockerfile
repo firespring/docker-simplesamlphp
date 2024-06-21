@@ -1,4 +1,5 @@
-FROM --platform=$BUILDPLATFORM php:8.2-apache
+FROM 300448126090.dkr.ecr.us-east-1.amazonaws.com/firespring-public/docker/library/php:8.2-apache
+MAINTAINER Firespring "info.dev@firespring.com"
 
 RUN apt-get update && \
     apt-get -y install apt-transport-https git curl vim --no-install-recommends && \
