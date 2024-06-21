@@ -42,6 +42,7 @@ RUN /tmp/mo /tmp/ports.conf.mo > /etc/apache2/ports.conf && \
 # hadolint ignore=DL3059
 RUN a2dissite 000-default.conf default-ssl.conf && \
     a2enmod rewrite && \
+    a2enmod ssl && \
     a2ensite simplesamlphp.conf
 
 # Clean up
